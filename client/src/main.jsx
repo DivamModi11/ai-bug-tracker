@@ -1,3 +1,4 @@
+// redeploy trigger
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx'
@@ -8,8 +9,8 @@ import {
 } from 'react-router-dom';
 
 import Login from './pages/login';
-import Registration from './pages/Registration';
-import Dashboard from './pages/dashboard.jsx';
+import Registration from './pages/registration';
+import Dashboard from './pages/Dashboard.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import Projects from './pages/Projects.jsx';
 import ProjectDetails from "./pages/ProjectDetails";
