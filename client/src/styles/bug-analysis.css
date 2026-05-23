@@ -1,0 +1,126 @@
+.analysis-page {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 24px 64px;
+}
+
+.analysis-wrapper {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.analysis-header {
+  text-align: center;
+}
+
+.analysis-header .eyebrow {
+  margin-bottom: 10px;
+}
+
+.analysis-header h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.analysis-container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px);
+}
+
+.analysis-bug-meta {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.analysis-bug-meta h2 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+}
+
+.analysis-bug-meta p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.analysis-section {
+  margin-bottom: 22px;
+}
+
+.analysis-section:last-child {
+  margin-bottom: 0;
+}
+
+.analysis-section h3 {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.analysis-section p {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.analysis-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.analysis-meta-item {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.analysis-meta-item h3 {
+  margin-bottom: 8px;
+}
+
+.analysis-meta-item p {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.analysis-loading,
+.analysis-error {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--muted);
+}
+
+.analysis-error {
+  color: #fecaca;
+}
+
+.analysis-back {
+  align-self: flex-start;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 560px) {
+  .analysis-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-container {
+    padding: 24px 20px;
+  }
+}
