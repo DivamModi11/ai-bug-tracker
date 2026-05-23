@@ -14,7 +14,7 @@ function Projects() {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/projects`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/projects`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(res.data);
@@ -27,7 +27,7 @@ function Projects() {
     e.preventDefault();
     try {
       await axios.post(
-        `${import.meta.env.VITE_API_URL}/projects`,
+        `${import.meta.env.VITE_API_URL}/api/projects`,
         { name, description },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -43,7 +43,7 @@ function Projects() {
   const handleDelete = async (e, projectId) => {
     e.preventDefault();
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/projects/${projectId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/projects/${projectId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchProjects();
