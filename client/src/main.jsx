@@ -7,7 +7,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Login from './pages/Login';
+import Login from './pages/login';
 import Registration from './pages/Registration';
 import Dashboard from './pages/dashboard.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
