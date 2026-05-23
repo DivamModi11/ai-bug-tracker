@@ -22,7 +22,7 @@ function BugAnalysis() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/bugs/${bugId}/analyze`,
+        `${import.meta.env.VITE_API_URL}/api/bugs/${bugId}/analyze`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

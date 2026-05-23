@@ -49,7 +49,7 @@ function ProjectDetails() {
   const fetchBugs = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/bugs/project/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/bugs/project/${id}`,
         {
           params: { search, status },
           headers: { Authorization: `Bearer ${token}` },
@@ -91,7 +91,7 @@ function ProjectDetails() {
   const updateStatus = async (bugId, newStatus) => {
     try {
       await axios.put(
-        `${import.meta.env.VITE_API_URL}/bugs/${bugId}/status`,
+        `${import.meta.env.VITE_API_URL}/api/bugs/${bugId}/status`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -104,7 +104,7 @@ function ProjectDetails() {
   const addMember = async () => {
     try {
       await axios.put(
-        `${import.meta.env.VITE_API_URL}/projects/${id}/add-member`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${id}/add-member`,
         { userId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -118,7 +118,7 @@ function ProjectDetails() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/users`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/users`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -130,7 +130,7 @@ function ProjectDetails() {
   const fetchMembers = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/projects/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/projects/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setMembers(res.data.members || []);
@@ -152,7 +152,7 @@ function ProjectDetails() {
       setError("");
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/bugs/${bugId}/comment`,
+        `${import.meta.env.VITE_API_URL}/api/bugs/${bugId}/comment`,
         { text: commentText[bugId] },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -417,7 +417,7 @@ function ProjectDetails() {
                           type="button"
                           onClick={async () => {
                             await axios.delete(
-                              `${import.meta.env.VITE_API_URL}/bugs/${bug._id}`,
+                              `${import.meta.env.VITE_API_URL}/api/bugs/${bug._id}`,
                               {
                                 headers: { Authorization: `Bearer ${token}` },
                               }
